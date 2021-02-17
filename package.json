@@ -1,0 +1,26 @@
+{
+  "name": "discord-bot",
+  "version": "0.1.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mflr0/botleandiscord.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mflr0/botleandiscord/issues"
+  },
+  "homepage": "https://github.com/mflr0/botleandiscord#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.0"
+  }
+}
