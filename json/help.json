@@ -1,0 +1,10 @@
+{
+    "content": "Voici la page d'aide, vous trouverez toutes les commandes qui sont disponibles:",
+    "embeds": [
+      {
+        "title": "❓** __Centre d'aide__**",
+        "description": "*$ping*: permet de ping le bot.\n\n*$coucou*: Hello World.\n\n*$say*: fait parler le bot.\n\n*$version*: Permet d'obtenir la version du bot.",
+        "color": 16711680
+      }
+    ]
+  }

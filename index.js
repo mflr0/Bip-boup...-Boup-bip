@@ -2,6 +2,9 @@ const Discord = require("discord.js");
 const config = require("./config.json");
 const client = new Discord.Client();
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 const prefix = "$";
 
@@ -40,13 +43,31 @@ client.on("message", async function(message) {
             msg = await message.channel.send(`<a:loader:811689262608941066> Redémarrage...`);
             client.destroy();
             client.login(config.BOT_TOKEN);
+            console.log("Bot redémarré!")
             msg.edit(":white_check_mark: Redémarré !");
         }
-    } /*else if (command === "clear") {
-        if (args.length === 1) {
-            
-        }*/
-    }
+    } else if (command === "stop") {
+        if (message.author.id != 650432748275892253 && message.author.id != 175948123183644672 && message.author.id != 297686294086287360)
+            message.channel.send(`:x: Tu n'as pas la permission de m'arrêter.`);
+        else {
+            msg = message.channel.send("<a:loader:811689262608941066> Arrêt...");
+            await sleep(2000);
+            client.login(config.BOT_TOKEN);
+            msg.edit(":white_chek_mark: Arrêté!")
+            client.destroy();
+        }
+    } //else if (command === "clear") {
+      //  if (args.length === 1) {
+      //      nbr = args{1};
+      //      if (Number.isInteger(nbr))
+      //          message.channel.send("il s'agit d'un chiffre");
+      //      else
+      //          message.channel.send("Ce n'est pas un chiffre, bitch!")
+      //  }
+      //  else {
+      //      message.channel.send(":x: Indiquez le nombre de messages a supprimer.");
+      //  }
+    //}
 });
 
 client.login(config.BOT_TOKEN);
