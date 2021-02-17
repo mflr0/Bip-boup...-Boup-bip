@@ -1,6 +1,6 @@
 {
   "name": "discord-bot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "none",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guilhem-jehanno/botleandiscord.git"
+    "url": "git+https://github.com/guilhem-jehanno/Bip-boup...-Boup-bip"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/guilhem-jehanno/botleandiscord/issues"
+    "url": "https://github.com/guilhem-jehanno/Bip-boup...-Boup-bip/issues"
   },
-  "homepage": "https://github.com/guilhem-jehanno/botleandiscord#readme",
+  "homepage": "https://github.com/guilhem-jehanno/Bip-boup...-Boup-bip#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "discord.js": "^12.5.1"
