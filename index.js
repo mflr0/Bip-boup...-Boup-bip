@@ -24,6 +24,8 @@ client.on("message", function(message) {
             message.channel.send(`:x: Je ne peux rien dire petit coquin`);
     } else if (command === "floguihug") {
         message.channel.send(`:eggplant::sweat_drops: Je te baise!`);
+    } else if (command === "test") {
+        message.channel.send(`Test`);
     }
 });
 
