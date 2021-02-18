@@ -15,6 +15,7 @@ client.on("message", async function(message) {
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
+    var msg2;
 
     if (command == "help") {
         message.channel.send(`Voici la page d'aide, vous trouverez ici toutes les commandes qui seront ajoutées:`);
@@ -40,34 +41,35 @@ client.on("message", async function(message) {
         if (message.author.id != 650432748275892253 && message.author.id != 175948123183644672 && message.author.id != 297686294086287360)
             message.channel.send(`:x: Tu n'as pas la permission de me redémarrer!`);
         else {
-            msg = await message.channel.send(`<a:loader:811689262608941066> Redémarrage...`);
+            msg2 = await message.channel.send(`<a:loader:811689262608941066> Redémarrage...`);
             client.destroy();
             client.login(config.BOT_TOKEN);
             console.log("Bot redémarré!")
-            msg.edit(":white_check_mark: Redémarré !");
+            msg2.edit(":white_check_mark: Redémarré !");
         }
     } else if (command === "stop") {
         if (message.author.id != 650432748275892253 && message.author.id != 175948123183644672 && message.author.id != 297686294086287360)
             message.channel.send(`:x: Tu n'as pas la permission de m'arrêter.`);
         else {
-            msg = message.channel.send("<a:loader:811689262608941066> Arrêt...");
+            msg2 = message.channel.send("<a:loader:811689262608941066> Arrêt...");
             await sleep(2000);
             client.login(config.BOT_TOKEN);
-            msg.edit(":white_chek_mark: Arrêté!")
+            msg2.edit(":white_chek_mark: Arrêté!");
+            console.log("Bot Arrêté!");
             client.destroy();
         }
-    } //else if (command === "clear") {
-      //  if (args.length === 1) {
-      //      nbr = args{1};
-      //      if (Number.isInteger(nbr))
-      //          message.channel.send("il s'agit d'un chiffre");
-      //      else
-      //          message.channel.send("Ce n'est pas un chiffre, bitch!")
-      //  }
-      //  else {
-      //      message.channel.send(":x: Indiquez le nombre de messages a supprimer.");
-      //  }
-    //}
+    } else if (command === "clear") {
+        if (args.length === 1) {
+            nbr = args[1];
+            if (Number.isInteger(nbr))
+                message.channel.send("il s'agit d'un chiffre");
+            else
+                message.channel.send("Ce n'est pas un chiffre, bitch!");
+        }
+        else {
+            message.channel.send(":x: Indiquez le nombre de messages a supprimer.");
+        }
+    }
 });
 
 client.login(config.BOT_TOKEN);
